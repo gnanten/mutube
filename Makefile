@@ -1,5 +1,5 @@
-YOUTUBE_IPA := ./ipa/YouTube_4.54.01_decrypted.ipa
-OUTPUT_IPA := ./mutube.ipa
+YOUTUBE_IPA := ./ipa/YouTube_4.54.01_decrypted.tipa
+OUTPUT_IPA := ./YouTube_4.54.01_mutubed.ipa
 PATCHER_FLAGS :=
 
 ifneq ($(PRINTF_LOGS),)
@@ -12,7 +12,7 @@ endif
 all: $(OUTPUT_IPA)
 
 $(OUTPUT_IPA): $(YOUTUBE_IPA) patcher.py inject.js
-	uv run patcher.py --in $(YOUTUBE_IPA) --out $(OUTPUT_IPA) $(PATCHER_FLAGS)
+	uv run --python 3.12 patcher.py --in $(YOUTUBE_IPA) --out $(OUTPUT_IPA) $(PATCHER_FLAGS)
 
 .PHONY: clean
 clean:
