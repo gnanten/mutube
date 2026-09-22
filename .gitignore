@@ -1,4 +1,4 @@
-ipa/
+# ipa/
 bin/
 .make-tmp_*
 *.ipa
